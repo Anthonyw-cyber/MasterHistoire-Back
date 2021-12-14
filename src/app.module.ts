@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { HandicapModule } from './handicap/handicap.module';
+import { MuseeModule } from './musee/musee.module';
 
 
 
@@ -32,6 +33,7 @@ import { HandicapModule } from './handicap/handicap.module';
       inject: [ConfigService],
     }),
     HandicapModule,
+    MuseeModule,
 
 
 
