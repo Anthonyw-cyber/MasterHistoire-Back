@@ -15,4 +15,8 @@ export class MuseeService {
     async findOneById(museeId: number) {
         return await this.museeRepo.findOne(museeId)
     }
+
+    async sendMusee(musee: museeEntity){
+        return await this.museeRepo.save(musee)
+    }
 }

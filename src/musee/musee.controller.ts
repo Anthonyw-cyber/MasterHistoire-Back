@@ -1,4 +1,4 @@
-import {Controller, Get} from '@nestjs/common';
+import {Controller, Get, Post} from '@nestjs/common';
 import {ApiTags} from "@nestjs/swagger";
 import {MuseeService} from "./musee.service";
 import {museeEntity} from "./musee.entity";
@@ -16,5 +16,10 @@ export class MuseeController {
     @Get('id')
     async getOneMuseeById(id: number){
         return await this.museeService.findOneById(id)
+    }
+
+    @Post('musee')
+    async postMusee(musee: museeEntity){
+        return await this.museeService.sendMusee(musee)
     }
 }
