@@ -14,6 +14,10 @@ export class museeEntity {
 
   @ApiProperty()
   @Column({ nullable: true })
+  description: string;
+
+  @ApiProperty()
+  @Column({ nullable: true })
   adresse: string;
 
   @ApiProperty()
