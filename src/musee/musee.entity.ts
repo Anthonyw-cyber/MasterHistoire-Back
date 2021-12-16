@@ -25,7 +25,7 @@ export class museeEntity {
   typologie: string;
 
   @ApiProperty()
-  @ManyToMany(() => handicapEntity)
+  @ManyToMany(() => handicapEntity, {cascade: ["insert"]})
   @JoinTable()
   handicap: handicapEntity[];
 }

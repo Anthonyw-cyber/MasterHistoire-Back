@@ -20,11 +20,10 @@ import { DispositifModule } from './dispositif/dispositif.module';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => {
         const test: any = {
-          type: 'mariadb',
+          type: 'mysql',
           host: configService.get('MYSQL_HOST'),
           port: +configService.get('MYSQL_PORT_INTERN'),
           username: configService.get('MYSQL_USER'),
-          password: configService.get('MYSQL_PASSWORD'),
           database: configService.get('MYSQL_DATABASE'),
           entities: [__dirname + '/**/*.entity{.ts,.js}'],
           synchronize: true,

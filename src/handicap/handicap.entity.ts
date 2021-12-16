@@ -13,7 +13,7 @@ export class handicapEntity {
   id: number;
 
   @Column({nullable:true})
-  handicap: string;
+  name: string;
 
   @OneToMany(() => dispositifEntity, dispositif => dispositif.handicap)
   dispositif: dispositifEntity[];
