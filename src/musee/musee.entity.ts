@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn} from 'typeorm';
+import {handicapEntity} from "../handicap/handicap.entity";
 
 @Entity()
 export class museeEntity {
@@ -7,4 +8,8 @@ export class museeEntity {
 
   @Column({ nullable: true })
   name: string;
+
+  @ManyToMany(() => handicapEntity)
+  @JoinTable()
+  handicap: handicapEntity[];
 }

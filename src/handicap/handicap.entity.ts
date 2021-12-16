@@ -1,8 +1,9 @@
 import {
   Column,
-  Entity,
+  Entity, OneToMany,
   PrimaryGeneratedColumn
 } from 'typeorm';
+import {dispositifEntity} from "../dispositif/dispositif.entity";
 
 
 
@@ -14,7 +15,8 @@ export class handicapEntity {
   @Column({nullable:true})
   handicap: string;
 
-
+  @OneToMany(() => dispositifEntity, dispositif => dispositif.handicap)
+  dispositif: dispositifEntity[];
 
 
 

@@ -4,6 +4,9 @@ import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { HandicapModule } from './handicap/handicap.module';
 import { MuseeModule } from './musee/musee.module';
+import { DispositifController } from './dispositif/dispositif.controller';
+import { DispositifService } from './dispositif/dispositif.service';
+import { DispositifModule } from './dispositif/dispositif.module';
 
 
 
@@ -34,6 +37,7 @@ import { MuseeModule } from './musee/musee.module';
     }),
     HandicapModule,
     MuseeModule,
+    DispositifModule,
 
 
 
@@ -41,6 +45,10 @@ import { MuseeModule } from './musee/musee.module';
 
 
   ],
+
+  controllers: [DispositifController],
+
+  providers: [DispositifService],
 
 
 

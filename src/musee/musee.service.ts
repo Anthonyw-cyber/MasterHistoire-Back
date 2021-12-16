@@ -6,9 +6,13 @@ import {museeEntity} from "./musee.entity";
 @Injectable()
 export class MuseeService {
 
-    constructor(@InjectRepository(museeEntity) private readonly MuseeRepo : Repository<museeEntity>,) {}
+    constructor(@InjectRepository(museeEntity) private readonly museeRepo : Repository<museeEntity>,) {}
 
     async findAll(){
-        return await this.MuseeRepo.find()
+        return await this.museeRepo.find()
+    }
+
+    async findOneById(museeId: number) {
+        return await this.museeRepo.findOne(museeId)
     }
 }
