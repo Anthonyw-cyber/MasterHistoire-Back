@@ -1,5 +1,5 @@
-import {Controller, Get, Post} from '@nestjs/common';
-import {ApiTags} from "@nestjs/swagger";
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
 import {MuseeService} from "./musee.service";
 import {museeEntity} from "./musee.entity";
 
@@ -17,9 +17,9 @@ export class MuseeController {
     async getOneMuseeById(id: number){
         return await this.museeService.findOneById(id)
     }
-
+    @ApiBody({type : [museeEntity]})
     @Post('musee')
-    async postMusee(musee: museeEntity){
+    async postMusee(@Body() musee: museeEntity){
         return await this.museeService.sendMusee(musee)
     }
 }
