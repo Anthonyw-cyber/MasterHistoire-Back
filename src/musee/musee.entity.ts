@@ -7,9 +7,22 @@ export class museeEntity {
   @ApiProperty()
   @PrimaryGeneratedColumn()
   id: number;
+
   @ApiProperty()
   @Column({ nullable: true })
   name: string;
+
+  @ApiProperty()
+  @Column({ nullable: true })
+  adresse: string;
+
+  @ApiProperty()
+  @Column({ nullable: true })
+  siteWeb: string;
+
+  @ApiProperty()
+  @Column({ nullable: true })
+  typologie: string;
 
   @ApiProperty()
   @ManyToMany(() => handicapEntity)
